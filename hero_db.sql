@@ -9,7 +9,8 @@ team_name varchar(30) not null,
 objective varchar(100) not null
 );
 
-create table hero (
+create table hero 
+(
 hero_id int not null primary key auto_increment,
 hero_name varchar(30) not null, 
 alias varchar(30) not null, 
@@ -17,3 +18,15 @@ ability varchar(100) not null,
 team_id int, 
 foreign key (team_id) references team(team_id)
 );
+
+create table product 
+(
+id int not null primary key auto_increment,
+name varchar(30) not null,
+colour varchar(30),
+standard_cost float,
+list_price float,
+date_first_available date
+);
+
+drop table product;

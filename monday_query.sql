@@ -18,9 +18,7 @@ VALUES ('Green'),
 INSERT INTO colour (colour_name)
 VALUES ('Red');
 
-SELECT *
-FROM person
-LIMIT 1000;
+SELECT * FROM person LIMIT 1000;
 
 INSERT INTO person (firstname, lastname, shoesize, colour_id)
 VALUES ('Archie', 'N', 10, 1);
@@ -35,3 +33,12 @@ VALUES ('Archie', 'AW', 10, 2),
 ('Huma', 'Ahmed', 6, 3),
 ('Kyle', 'Preston', 9, 1),
 ('Emily', 'Serle', 6, 6);
+
+-- average shoe size
+SELECT AVG(shoesize) FROM person;
+SELECT SUM(shoesize) FROM person;
+SELECT MIN(shoesize) FROM person;
+SELECT MAX(shoesize) FROM person;
+
+INSERT INTO person (firstname, lastname, shoesize, colour_id)
+VALUES ('Allis', 'McSweeny', NULL, 2);

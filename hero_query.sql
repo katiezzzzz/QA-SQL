@@ -23,3 +23,24 @@ SELECT t.team_id, t.team_name, h.hero_name, h.alias
 FROM team AS t 
 INNER JOIN hero AS h
 ON t.team_id=h.team_id;
+
+SELECT t.team_id, t.team_name, h.hero_name, h.alias 
+FROM team AS t 
+LEFT OUTER JOIN hero AS h
+ON t.team_id=h.team_id;
+
+SELECT t.team_id, t.team_name, h.hero_name, h.alias 
+FROM team AS t 
+RIGHT OUTER JOIN hero AS h
+ON t.team_id=h.team_id;
+
+-- MySQL doesn't support a full outer join
+SELECT t.team_id, t.team_name, h.hero_name, h.alias 
+FROM team AS t 
+LEFT OUTER JOIN hero AS h
+ON t.team_id=h.team_id
+UNION
+SELECT t.team_id, t.team_name, h.hero_name, h.alias 
+FROM team AS t 
+RIGHT OUTER JOIN hero AS h
+ON t.team_id=h.team_id;
